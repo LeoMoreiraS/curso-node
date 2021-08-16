@@ -3,5 +3,11 @@
     "@types/node": "^16.6.1",
     "git-commit-msg-linter": "^3.2.8",
     "typescript": "^4.3.5"
-  }
+  },
+  "name": "curso-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LeoMoreiraS/curso-node.git",
+  "author": "Leonardo Moreira <leomoreira.com@gmail.com>",
+  "license": "MIT"
 }
