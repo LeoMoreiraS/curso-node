@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.6.1",
     "@typescript-eslint/eslint-plugin": "4",
     "eslint": "7",
@@ -9,7 +10,9 @@
     "eslint-plugin-promise": "4",
     "git-commit-msg-linter": "^3.2.8",
     "husky": "^7.0.1",
+    "jest": "^27.0.6",
     "lint-staged": "^11.1.2",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
   },
   "name": "curso-node",
@@ -17,5 +20,8 @@
   "main": "index.js",
   "repository": "https://github.com/LeoMoreiraS/curso-node.git",
   "author": "Leonardo Moreira <leomoreira.com@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  }
 }
