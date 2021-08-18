@@ -2,6 +2,7 @@ import { SingUpController } from './SingUpController';
 import { MissingParamError } from '../Errors/MissingParamError';
 import { InvalidParamError } from '../Errors/InvalidParamError';
 import { EmailValidator } from '../protocols/EmailValidator';
+import { ServerError } from '../Errors/ServerError';
 
 interface SutTypes{
   sut: SingUpController
@@ -85,7 +86,7 @@ describe('SingUp Controller', () => {
     const httpRequest = {
       body: {
         name: 'Pedrin',
-        email: 'pedrin@gmail.com',
+        email: 'invalid_email@gmail.com',
         password: 'password',
         passwordConfirm: 'password'
       }
@@ -108,5 +109,26 @@ describe('SingUp Controller', () => {
     };
     sut.handle(httpRequest);
     expect(isValidSpy).toHaveBeenCalledWith('pedrin@gmail.com');
+  });
+  test('Should return 500 EmailValidator throws Exception', () => {
+    class EmailValidatorStub implements EmailValidator {
+      isValid (email: string): boolean {
+        throw new Error();
+      }
+    }
+    const emailValidatorStub = new EmailValidatorStub();
+    const sut = new SingUpController(emailValidatorStub);
+
+    const httpRequest = {
+      body: {
+        name: 'Pedrin',
+        email: 'pedrin@gmail.com',
+        password: 'password',
+        passwordConfirm: 'password'
+      }
+    };
+    const httpResponse = sut.handle(httpRequest);
+    expect(httpResponse.statusCode).toBe(500);
+    expect(httpResponse.body).toEqual(new ServerError());
   });
 });
