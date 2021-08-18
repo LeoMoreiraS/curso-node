@@ -23,7 +23,7 @@
   "author": "Leonardo Moreira <leomoreira.com@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "test:staged":"jest"
+    "test": "jest --passWithNoTests --watch",
+    "test:staged":"jest --passWithNoTests"
   }
 }
