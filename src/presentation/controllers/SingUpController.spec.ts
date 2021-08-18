@@ -1,8 +1,6 @@
 import { SingUpController } from './SingUpController';
-import { MissingParamError } from '../Errors/MissingParamError';
-import { InvalidParamError } from '../Errors/InvalidParamError';
-import { EmailValidator } from '../protocols/EmailValidator';
-import { ServerError } from '../Errors/ServerError';
+import { MissingParamError, InvalidParamError, ServerError } from '../Errors';
+import { EmailValidator } from '../protocols';
 
 interface SutTypes{
   sut: SingUpController
