@@ -24,8 +24,10 @@ export class SingUpController implements Controller {
         email,
         password
       });
-      if (account.email !== email) { return badRequest(new InvalidParamError('email')); }
-      return badRequest(new InvalidParamError('nope'));
+      return {
+        statusCode: 201,
+        body: account
+      };
     } catch (error) {
       return serverError();
     }
