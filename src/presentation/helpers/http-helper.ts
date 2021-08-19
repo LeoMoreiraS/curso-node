@@ -10,3 +10,7 @@ export const serverError = (): HttpResponse => ({
   statusCode: 500,
   body: new ServerError()
 });
+export const createOk = (data: any): HttpResponse => ({
+  statusCode: 201,
+  body: data
+});
