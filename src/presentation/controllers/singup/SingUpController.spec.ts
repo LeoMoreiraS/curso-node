@@ -198,4 +198,24 @@ describe('SingUp Controller', () => {
     expect(httpResponse.statusCode).toBe(500);
     expect(httpResponse.body).toEqual(new ServerError());
   });
+  test('Should return 200 if valid data is provided', () => {
+    const { sut } = makeSut();
+
+    const httpRequest = {
+      body: {
+        name: 'valid-name',
+        email: 'valid-email@gmail.com',
+        password: 'valid-password',
+        passwordConfirm: 'valid-password'
+      }
+    };
+    const httpResponse = sut.handle(httpRequest);
+    expect(httpResponse.statusCode).toBe(201);
+    expect(httpResponse.body).toEqual({
+      id: 'valid-id',
+      name: 'valid-name',
+      email: 'valid-email@gmail.com',
+      password: 'valid-password'
+    });
+  });
 });
