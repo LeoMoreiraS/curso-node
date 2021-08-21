@@ -26,6 +26,10 @@
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "yarn test -- --watch",
-    "test:staged":"yarn test -- --findRelatedTests"
+    "test:staged": "yarn test -- --findRelatedTests"
+  },
+  "dependencies": {
+    "@types/validator": "^13.6.3",
+    "validator": "^13.6.0"
   }
 }
