@@ -5,6 +5,7 @@
     },
     "rules": {
         "@typescript-eslint/semi": [1,"always"],
+        "semi": [1,"always"],
         "@typescript-eslint/strict-boolean-expressions" : "off",
         "eslintnode/handle-callback-err" : "off",
         "@typescript-eslint/return-await": "off"

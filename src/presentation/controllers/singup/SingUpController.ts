@@ -26,6 +26,7 @@ export class SingUpController implements Controller {
       });
       return createOk(account);
     } catch (error) {
+      console.error(error);
       return serverError();
     }
   }
