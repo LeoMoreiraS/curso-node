@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { DbAddAccount } from './DbAddAccount';
-import { Encrypter } from './protocols/Encrypter';
+import { Encrypter } from './DbAddAccountProtocols';
 interface SutTypes{
   sut: DbAddAccount
   encrypterStub: Encrypter
